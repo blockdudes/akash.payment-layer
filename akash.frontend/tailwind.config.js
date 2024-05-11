@@ -7,6 +7,10 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Open Sans', 'sans-serif'],
+        acme: ['Acme', 'sans-serif'],
+        madimi: ['Madimi One', 'sans-serif'],
+        posten: ['Poetsen One', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
       colors: {
         'akash-red': '#ff414c',

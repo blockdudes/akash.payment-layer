@@ -66,7 +66,7 @@ const CanvasBackground: React.FC = () => {
   let mx: number, my: number;
 
   return (
-    <div style={{ overflow: 'hidden' }}>
+    <div style={{ overflow: 'hidden', position: 'absolute' }}>
       <canvas id="canvas" ref={canvasRef} style={{ width: '100vw' }}></canvas>
     </div>
   );

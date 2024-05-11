@@ -8,9 +8,8 @@ import {
 } from "thirdweb/react";
 import { inAppWallet, } from "thirdweb/wallets";
 import { useActiveWalletConnectionStatus } from 'thirdweb/react';
-
-
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import logo from '../assets/akashLogoFull.svg';
 
 
 const client = createThirdwebClient({
@@ -37,7 +36,7 @@ const Login: React.FC = () => {
   const connectionStatus = useActiveWalletConnectionStatus();
   console.log(connectionStatus);
 
-  
+
   useEffect(() => {
     if (connectionStatus == "connected") {
       console.log("connected to home");
@@ -46,36 +45,25 @@ const Login: React.FC = () => {
   }, [connectionStatus])
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-page">
-      <ThirdwebProvider>
-        <ConnectEmbed
-          client={client}
-          wallets={wallets}
-          theme={lightTheme({
-            colors: { accentButtonBg: "#fd3f4a" },
-          })}
-          onConnect={() => {
+    <div className="flex items-center justify-between min-h-screen mx-auto px-72">
+      <div className='flex-col px-10'>
+        <img src={logo} alt="logo" className='h-16'/>
+        <div className='py-5 text-3xl text-bold font-bold'>
+          Welcome to akash Network
+        </div>
+      </div>
+      <div>
+        <ThirdwebProvider>
+          <ConnectEmbed
+            client={client}
+            wallets={wallets}
+            theme={lightTheme({
+              colors: { accentButtonBg: "#fd3f4a" },
+            })}
 
-          }}
-
-
-
-        // connectModal={{
-        //   size: "compact",
-        //   title: "Sign in ",
-        //   titleIcon:
-        //     "https://i.postimg.cc/3RDLnLmG/akash-logo-Czd-Yko-VW-2sjg-Hi-3.png",
-        //   showThirdwebBranding: false,
-        // }}
-        />
-        {/* <ConnectEmbed
-        theme="dark"
-        onConnect={() => {
-          console.log("connected");
-          // you can also redirect to a different page using Next.js router
-        }}
-      /> */}
-      </ThirdwebProvider>
+          />
+        </ThirdwebProvider>
+      </div>
     </div>
   );
 };
