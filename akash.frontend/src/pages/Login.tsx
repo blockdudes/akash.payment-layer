@@ -7,14 +7,6 @@ import {
   ConnectEmbed,
 } from "thirdweb/react";
 import { inAppWallet, } from "thirdweb/wallets";
-import { useActiveWalletConnectionStatus } from 'thirdweb/react';
-
-
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import { useConnectionStatus } from '../provider/ConnectionStatusProvider';
-import { defineChain } from "thirdweb/chains";
-
-
 
 
 
@@ -52,24 +44,7 @@ const Login: React.FC = () => {
           onConnect={() => {
 
           }}
-
-
-
-        // connectModal={{
-        //   size: "compact",
-        //   title: "Sign in ",
-        //   titleIcon:
-        //     "https://i.postimg.cc/3RDLnLmG/akash-logo-Czd-Yko-VW-2sjg-Hi-3.png",
-        //   showThirdwebBranding: false,
-        // }}
         />
-        {/* <ConnectEmbed
-        theme="dark"
-        onConnect={() => {
-          console.log("connected");
-          // you can also redirect to a different page using Next.js router
-        }}
-      /> */}
       </ThirdwebProvider>
     </div>
   );

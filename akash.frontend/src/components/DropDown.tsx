@@ -20,7 +20,7 @@ const Dropdown = () => {
 
   const checkoutPage = () => {
     toggleMenu();
-    navigate("/checkout");
+    navigate("/checkoutForm");
   };
 
   return (
