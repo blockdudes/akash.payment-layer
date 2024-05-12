@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Home: React.FC = () => {
+  
   return (
     // <InteractiveBackground>
     <div className="min-h-screen bg-page flex items-center justify-center ">

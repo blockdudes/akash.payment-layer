@@ -18,6 +18,11 @@ const Dropdown = () => {
   const { disconnect } = useDisconnect();
   const wallet: Wallet | undefined = useActiveWallet();
 
+  const checkoutPage = () => {
+    toggleMenu();
+    navigate("/checkout");
+  };
+
   return (
     <div className="relative inline-block text-left">
       <div>
@@ -47,7 +52,7 @@ const Dropdown = () => {
             </div >
             </div >
 
-            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" onClick={toggleMenu}>
+            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" onClick={checkoutPage}>
               <FontAwesomeIcon icon={faPlus} className="mr-2" />
               Add money
             </a>

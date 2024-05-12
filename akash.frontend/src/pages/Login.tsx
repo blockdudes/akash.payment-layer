@@ -11,6 +11,11 @@ import { useActiveWalletConnectionStatus } from 'thirdweb/react';
 
 
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { useConnectionStatus } from '../provider/ConnectionStatusProvider';
+import { defineChain } from "thirdweb/chains";
+
+
+
 
 
 const client = createThirdwebClient({
@@ -33,22 +38,12 @@ const wallets = [
 
 const Login: React.FC = () => {
 
-  const navigate = useNavigate();
-  const connectionStatus = useActiveWalletConnectionStatus();
-  console.log(connectionStatus);
-
-  
-  useEffect(() => {
-    if (connectionStatus == "connected") {
-      console.log("connected to home");
-      navigate("/home");
-    }
-  }, [connectionStatus])
 
   return (
     <div className="flex items-center justify-center min-h-screen " >
       <ThirdwebProvider>
         <ConnectEmbed
+          chain={{ id: 1, rpc: "akash" }}
           client={client}
           wallets={wallets}
           theme={lightTheme({
