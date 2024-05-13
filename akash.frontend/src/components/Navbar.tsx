@@ -4,7 +4,6 @@ import { useActiveWalletConnectionStatus, } from 'thirdweb/react';
 import Dropdown from '../components/DropDown';
 import logo from '../assets/akashLogoFull.svg';
 
-
 const Navbar: React.FC = () => {
   const connectionStatus = useActiveWalletConnectionStatus();
 
@@ -13,7 +12,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      {connectionStatus === "connected" && (
+      {/* {connectionStatus === "connected" && ( */}
         <>
           <nav className="bg-transparent   py-2 ">
             <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
@@ -29,7 +28,7 @@ const Navbar: React.FC = () => {
             </div>
           </nav>
         </>
-      )}
+      {/* )} */}
     </>
   );
 };
