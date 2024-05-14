@@ -6,6 +6,7 @@ import { Wallet, inAppWallet } from 'thirdweb/wallets';
 import Dropdown from '../components/DropDown';
 import { useWeb3Auth } from '../provider/authProvider';
 import logo from '../assets/akashLogoFull.svg';
+import { toast } from 'react-toastify';
 
 
 
@@ -36,10 +37,10 @@ const Navbar: React.FC = () => {
         <img src={logo} alt="akash logo" className="cursor-pointer h-5" onClick={() => navigate("/")} />
 
         <div className="flex items-center">
-          <Link to="/home" className="text-gray-800 hover:text-gray-900 mx-2 py-2 rounded-md text-sm font-medium">Home</Link>
-          <Link to="/login" className="text-gray-800 hover:text-gray-900 mx-2 py-2 rounded-md text-sm font-medium">Login</Link>
-          <Link to="/DemoCards" className="text-gray-800 hover:text-gray-900 mx-2 py-2 rounded-md text-sm font-medium">Demo Cards</Link>
-          {status && (
+          <Link to="/home" className="text-gray-800 hover:text-akash-red-dark mx-2 py-2 rounded-md text-sm font-medium " >Home</Link>
+          <Link to="/login" className="text-gray-800 hover:text-akash-red-dark mx-2 py-2 rounded-md text-sm font-medium">Login</Link>
+          <Link to="/DemoCards" className="text-gray-800 hover:text-akash-red-dark mx-2 py-2 rounded-md text-sm font-medium">Demo Cards</Link>
+          {status && userInfo && (
           <Dropdown userInfo={userInfo} />
           )}
         </div>
